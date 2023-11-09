@@ -13,3 +13,52 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+.container {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+/**************
+*    BANNER
+**************/
+
+.banner {
+  position: relative;
+  height: 500px;
+  .background {
+    display: flex;
+    height: 500px;
+    background-color: var(--color-primary);
+  }
+  .container {
+    margin-top: -500px;
+    .content {
+      color: white;
+      position: absolute;
+      #logo {
+        margin-top: 57px;
+        margin-bottom: 40px;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 70px;
+      }
+      #arrow-down {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+/*****************
+*    SELECTION
+*****************/
+
+.selection {
+  .inputWrapper {
+    span {
+      font-weight: bolder;
+    }
+  }
+}
