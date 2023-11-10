@@ -23,36 +23,50 @@ body {
 *    BANNER
 **************/
 .banner {
-  position: relative;
   height: 500px;
 }
-.banner .background {
+.banner .banner-background {
   display: flex;
+  justify-content: space-around;
   height: 500px;
+  overflow: hidden;
   background-color: var(--color-primary);
 }
-.banner .container {
+.banner .banner-background img {
+  width: 100vw;
+}
+.banner .container .banner-content {
+  color: white;
   margin-top: -500px;
 }
-.banner .container .content {
-  color: white;
-  position: absolute;
-}
-.banner .container .content #logo {
+.banner .container .banner-content #logo {
   margin-top: 57px;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
-.banner .container .content h1 {
+.banner .container .banner-content h1 {
   font-weight: 700;
   font-size: 70px;
 }
-.banner .container .content #arrow-down {
+.banner .container .banner-content #arrow-down {
   margin-top: 30px;
 }
 
 /*****************
 *    SELECTION
 *****************/
-.selection .inputWrapper span {
+.selection .container .selectionData {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.selection .container .selectionData .inputWrapper {
+  display: block;
+  width: 30%;
+}
+.selection .container .selectionData .inputWrapper img {
+  height: 15%;
+  margin-top: 30px;
+}
+.selection .container .selectionData .inputWrapper span {
   font-weight: bolder;
 }/*# sourceMappingURL=index.css.map */

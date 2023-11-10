@@ -13,14 +13,14 @@
 
   <section class="banner">
 
-    <div class="background">
-      <img src="./images/hero/desktop/left-leaves.png" alt="left leaves">
-      <img src="./images/hero/desktop/plantperson.png" alt="plant person">
-      <img src="./images/hero/desktop/right-leaves.png" alt="right leaves">
+    <div class="banner-background">
+      <img src="./images/hero/desktop/left-leaves.png" alt="">
+      <img src="./images/hero/desktop/plantperson.png" alt="">
+      <img src="./images/hero/desktop/right-leaves.png" alt="">
     </div>
 
     <div class="container">
-      <div class="content">
+      <div class="banner-content">
         <img id="logo" src="images/icons/logo-white.svg" alt="Greenthumb" />
         <h1>Find your</h1>
         <h1>next green</h1>
@@ -28,41 +28,48 @@
         <img id="arrow-down" src="./images/icons/arrow-down.svg" alt="arrow down">
       </div>
     </div>
-
   </section>
+
+
 
   <section class="selection">
 
     <div class="container">
       <form>
         <div class="selectionData">
+
           <div class="inputWrapper">
-            <label><span>1.</span> Set the amount of <span>sunlight</span> your plant will get.</label>
+            <img src="./images/illustrations/sun.png" alt="sun">
+            <p><span>1.</span> Set the amount of <span>sunlight</span> your plant will get.</p>
             <select>
               <option value="">Select...</option>
-              <option value="">High sunlight</option>
-              <option value="">Low sunlight</option>
-              <option value="">No sunlight</option>
+              <option value="high">High sunlight</option>
+              <option value="low">Low sunlight</option>
+              <option value="no">No sunlight</option>
             </select>
           </div>
+
           <div class="inputWrapper">
-            <label><span>2.</span> How often do you want to <span>water</span> your plant?</label>
+            <img src="./images/illustrations/wateringcan.png" alt="watering can">
+            <p><span>2.</span> How often do you want to <span>water</span> your plant?</p>
             <select>
               <option value="">Select...</option>
-              <option value="">Corte de Cabelo</option>
-              <option value="">Design de Barba</option>
-              <option value="">Pacote VIP</option>
+              <option value="daily">Daily</option>
+              <option value="regularly">Regularly</option>
+              <option value="rarely">Rarely</option>
             </select>
           </div>
+
           <div class="inputWrapper">
-            <label>Telefone:</label>
+            <img src="./images/illustrations/dog.png" alt="dog">
+            <p><span>3</span>. Do you have pets? Do they <span>chew</span> plants? </p>
             <select>
               <option value="">Select...</option>
-              <option value="">Corte de Cabelo</option>
-              <option value="">Design de Barba</option>
-              <option value="">Pacote VIP</option>
+              <option value="true">Yes</option>
+              <option value="false">No/They don't care</option>
             </select>
           </div>
+
         </div>
       </form>
     </div>

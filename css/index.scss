@@ -22,23 +22,25 @@ body {
 /**************
 *    BANNER
 **************/
-
 .banner {
-  position: relative;
   height: 500px;
-  .background {
+  .banner-background {
     display: flex;
+    justify-content: space-around;
     height: 500px;
+    overflow: hidden;
     background-color: var(--color-primary);
+    img {
+      width: 100vw;
+    }
   }
   .container {
-    margin-top: -500px;
-    .content {
+    .banner-content {
       color: white;
-      position: absolute;
+      margin-top: -500px;
       #logo {
         margin-top: 57px;
-        margin-bottom: 40px;
+        margin-bottom: 45px;
       }
       h1 {
         font-weight: 700;
@@ -56,9 +58,22 @@ body {
 *****************/
 
 .selection {
-  .inputWrapper {
-    span {
-      font-weight: bolder;
+  .container {
+    .selectionData {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .inputWrapper {
+        display: block;
+        width: 30%;
+        img {
+          height: 15%;
+          margin-top: 30px;
+        }
+        span {
+          font-weight: bolder;
+        }
+      }
     }
   }
 }
