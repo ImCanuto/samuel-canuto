@@ -82,35 +82,50 @@ const json = `[
     }
 ]`;
 
-const array = JSON.parse(json);
+//Converte json em um objeto
+const plantsList = JSON.parse(json);
 
-let rightPlants = [];
+function plantsMap() {
+  let rightPlants = [];
 
-const selectedOptions = {
-  sun: "no",
-  water: "daily",
-  pets: true,
+  plantsList.map((plant) => {
+    // Verifica se a opção pets está ativa
+    if (userSelectionObject.pets) {
+      if (
+        plant.sun === userSelectionObject.sun &&
+        plant.water === userSelectionObject.water &&
+        plant.toxicity !== userSelectionObject.pets
+      ) {
+        rightPlants.push(plant);
+      }
+    } else {
+      // Se a opção de pets não estiver atativa, verifica apenas sun e water
+      if (
+        plant.sun === userSelectionObject.sun &&
+        plant.water === userSelectionObject.water
+      ) {
+        rightPlants.push(plant);
+      }
+    }
+  });
+  console.log(rightPlants);
+}
+
+// Seleção do usuário
+let userSelectionObject = {
+  sun: "",
+  water: "",
+  pets: false,
 };
 
-array.map((plant) => {
-  // Verifica se a opção pets está ativa
-  if (selectedOptions.pets) {
-    if (
-      plant.sun === selectedOptions.sun &&
-      plant.water === selectedOptions.water &&
-      plant.toxicity !== selectedOptions.pets
-    ) {
-      rightPlants.push(plant);
-    }
+function dynamicSelect(select, objectProperty) {
+  let value = select.value;
+  if (objectProperty === "pets") {
+    userSelectionObject[objectProperty] = value === "true"; // Converte a string para um valor booleano
   } else {
-    // Se a opção de pets não estiver atativa, verifica apenas sun e water
-    if (
-      plant.sun === selectedOptions.sun &&
-      plant.water === selectedOptions.water
-    ) {
-      rightPlants.push(plant);
-    }
+    userSelectionObject[objectProperty] = value;
   }
-});
 
-console.log(rightPlants);
+  console.log(userSelectionObject);
+  plantsMap();
+}
