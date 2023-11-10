@@ -2,6 +2,7 @@
   --color-primary: #75bc97;
   --color-secondary: #15573f;
   --color-tertiary: #fd9872;
+  --text-main-color: #a8a8a8;
 }
 
 * {
@@ -17,6 +18,20 @@ body {
 .container {
   width: 60vw;
   margin: 0 auto;
+}
+
+@keyframes upDown {
+  0% {
+    margin-top: 30px;
+  }
+
+  50% {
+    margin-top: 20px;
+  }
+
+  100% {
+    margin-top: 30px;
+  }
 }
 
 /**************
@@ -45,9 +60,13 @@ body {
       h1 {
         font-weight: 700;
         font-size: 70px;
+        max-width: 50%;
       }
       #arrow-down {
-        margin-top: 30px;
+        margin-top: 40px;
+        animation-name: upDown;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
       }
     }
   }
@@ -58,6 +77,8 @@ body {
 *****************/
 
 .selection {
+  color: #848484;
+  font-size: 14px;
   .container {
     .selectionData {
       display: flex;
@@ -65,15 +86,55 @@ body {
       width: 100%;
       .inputWrapper {
         display: block;
-        width: 30%;
+        width: 25%;
         img {
-          height: 15%;
-          margin-top: 30px;
+          height: 75px;
+          margin-top: 40px;
+          margin-bottom: 10px;
         }
         span {
           font-weight: bolder;
         }
+        p {
+          margin-bottom: 20px;
+        }
+        select {
+          width: 100%;
+          border-radius: 19px;
+          border: 1px solid var(--text-main-color);
+          color: var(--text-main-color);
+          padding: 10px;
+          margin-bottom: 50px;
+          font-weight: 14px;
+        }
       }
+    }
+  }
+}
+
+/*****************
+*     RESULTS
+*****************/
+
+.results {
+  color: var(--text-main-color);
+  background-color: #f6f6f6;
+  padding-top: 70px;
+  padding-bottom: 80px;
+  .container {
+    display: flex;
+    .content {
+      h2 {
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
+      p {
+        max-width: 30%;
+        line-height: 27px;
+      }
+    }
+    img {
+      height: 200px;
     }
   }
 }

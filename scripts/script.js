@@ -87,7 +87,7 @@ const array = JSON.parse(json);
 let rightPlants = [];
 
 const selectedOptions = {
-  sunlight: "no",
+  sun: "no",
   water: "daily",
   pets: true,
 };
@@ -96,7 +96,7 @@ array.map((plant) => {
   // Verifica se a opção pets está ativa
   if (selectedOptions.pets) {
     if (
-      plant.sun === selectedOptions.sunlight &&
+      plant.sun === selectedOptions.sun &&
       plant.water === selectedOptions.water &&
       plant.toxicity !== selectedOptions.pets
     ) {
@@ -105,7 +105,7 @@ array.map((plant) => {
   } else {
     // Se a opção de pets não estiver atativa, verifica apenas sun e water
     if (
-      plant.sun === selectedOptions.sunlight &&
+      plant.sun === selectedOptions.sun &&
       plant.water === selectedOptions.water
     ) {
       rightPlants.push(plant);
