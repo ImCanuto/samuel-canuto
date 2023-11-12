@@ -39,14 +39,19 @@ body {
 **************/
 .banner {
   height: 500px;
+  overflow: hidden;
   .banner-background {
     display: flex;
     justify-content: space-around;
     height: 500px;
+    width: 100vw;
     overflow: hidden;
     background-color: var(--color-primary);
     img {
       width: 100vw;
+    }
+    .mobile {
+      display: none;
     }
   }
   .container {
@@ -60,13 +65,55 @@ body {
       h1 {
         font-weight: 700;
         font-size: 70px;
-        max-width: 50%;
       }
       #arrow-down {
         margin-top: 40px;
         animation-name: upDown;
         animation-duration: 2000ms;
         animation-iteration-count: infinite;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    .content {
+      margin-top: -800;
+    }
+  }
+}
+
+@media (max-width: 665px) {
+  .banner {
+    .banner-background {
+      display: block;
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+        height: 50%;
+      }
+    }
+    .container {
+      .content {
+        h1 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .banner {
+    height: 600px;
+    .container {
+      .content {
+        h1 {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -111,6 +158,34 @@ body {
   }
 }
 
+@media (max-width: 665px) {
+  .selection {
+    .container {
+      .selectionData {
+        flex-direction: column;
+        justify-content: center;
+        .inputWrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .selection {
+    .container {
+      .selectionData {
+        flex-direction: column;
+        justify-content: center;
+        .inputWrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 /*****************
 *     NO RESULTS
 *****************/
@@ -138,6 +213,40 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .no-results {
+    .container {
+      display: block;
+      .content {
+        h2 {
+          max-width: 70%;
+        }
+        p {
+          max-width: 50%;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .no-results {
+    .container {
+      .content {
+        h2 {
+          max-width: 100%;
+          font-size: 30px;
+        }
+        p {
+          max-width: 80%;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
 /*****************
 *     RESULTS
 *****************/
@@ -159,8 +268,8 @@ body {
       display: flex;
       flex-wrap: wrap;
       .plant {
-        display: flexbox;
         border-radius: 5px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         height: 300px;
         width: 250px;
         margin-bottom: 30px;

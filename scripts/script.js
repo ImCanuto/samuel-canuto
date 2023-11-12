@@ -82,50 +82,12 @@ const plantsList = [
   },
 ];
 
-function getResults() {
-  let rightPlants = [];
-
-  plantsList.forEach((plant) => {
-    // Verifica se a opção pets está ativa
-    if (userSelectionObject.pets) {
-      if (
-        plant.sun === userSelectionObject.sun &&
-        plant.water === userSelectionObject.water &&
-        plant.toxicity !== userSelectionObject.pets
-      ) {
-        rightPlants.push(plant);
-      }
-    } else {
-      // Se a opção de pets não estiver atativa, verifica apenas sun e water
-      if (
-        plant.sun === userSelectionObject.sun &&
-        plant.water === userSelectionObject.water
-      ) {
-        rightPlants.push(plant);
-      }
-    }
-  });
-  showResults(rightPlants);
-}
-
 // Seleção do usuário
 let userSelectionObject = {
   sun: "",
   water: "",
   pets: false,
 };
-
-function dynamicSelect(select, objectProperty) {
-  let value = select.value;
-  if (objectProperty === "pets") {
-    userSelectionObject[objectProperty] = value === "true"; // Converte a string para um valor booleano
-  } else {
-    userSelectionObject[objectProperty] = value;
-  }
-
-  console.log(userSelectionObject);
-  getResults();
-}
 
 function showResults(object) {
   if (object.length !== 0) {
@@ -154,4 +116,42 @@ function showResults(object) {
     document.querySelector(".no-results").style.display = "block";
     document.querySelector(".results").style.display = "none";
   }
+}
+
+function getResults() {
+  let rightPlants = [];
+
+  plantsList.forEach((plant) => {
+    // Verifica se a opção pets está ativa
+    if (userSelectionObject.pets) {
+      if (
+        plant.sun === userSelectionObject.sun &&
+        plant.water === userSelectionObject.water &&
+        plant.toxicity !== userSelectionObject.pets
+      ) {
+        rightPlants.push(plant);
+      }
+    } else {
+      // Se a opção de pets não estiver ativa, verifica apenas sun e water
+      if (
+        plant.sun === userSelectionObject.sun &&
+        plant.water === userSelectionObject.water
+      ) {
+        rightPlants.push(plant);
+      }
+    }
+  });
+  showResults(rightPlants);
+}
+
+function dynamicSelect(select, objectProperty) {
+  let value = select.value;
+  if (objectProperty === "pets") {
+    userSelectionObject[objectProperty] = value === "true"; // Converte a string para um valor booleano
+  } else {
+    userSelectionObject[objectProperty] = value;
+  }
+
+  console.log(userSelectionObject);
+  getResults();
 }
